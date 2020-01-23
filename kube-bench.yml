@@ -1,0 +1,19 @@
+- hosts: master
+  become: true
+  become_user: cestmoi
+  tasks:
+    - name: run kubebench for workers
+      shell: kubectl apply -f https://raw.githubusercontent.com/aquasecurity/kube-bench/master/job-node.yaml
+
+    - pause: seconds=30
+
+    - name: get name of kubebench pod
+      shell: echo $(kubectl logs $(kubectl get pods -o=jsonpath='{.items[?(@.metadata.labels.name=="kube-bench-node")].metadata.name}')) >> ~/node_results.txt
+
+    - name: run kubebench for master
+      shell: kubectl apply -f https://raw.githubusercontent.com/aquasecurity/kube-bench/master/job-master.yaml
+
+    - pause: seconds=30
+
+    - name: get name of kubebench pod
+      shell: echo $(kubectl logs $(kubectl get pods -o=jsonpath='{.items[?(@.metadata.labels.name=="kube-bench-master")].metadata.name}')) >> ~/master_results.txt
