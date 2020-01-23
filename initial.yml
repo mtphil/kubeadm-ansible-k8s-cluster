@@ -14,12 +14,3 @@
       authorized_key: user=cestmoi key="{{item}}"
       with_file:
         - ~/.ssh/digoc2.pub
-
-    - name: Update all packages to the latest version
-      apt:
-        upgrade: dist
-
-    - name: Upgrade all packages to the latest version
-      apt:
-        name: "*"
-        state: latest
