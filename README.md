@@ -13,3 +13,7 @@ worker2 ansible_host=<worker2_ip> ansible_user=root
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
 ```
+
+Afterwards `run.sh` can be used with the `TARGET_OS` variable (choices include `ubuntu`, `debian` and `centos`) set, like so:
+
+```TARGET_OS=centos ./run.sh```
