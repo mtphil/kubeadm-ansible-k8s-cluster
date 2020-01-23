@@ -5,20 +5,10 @@
       shell: "dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo"
 
     - name: install containerd
-      dnf:
-        name: "https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm"
-        state: present
+      shell: "dnf install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm"
 
     - name: install docker
-      denf:
-        name: "docker-ce"
-        state: present
-
-    - name: enable docker and ensure it is not masked
-      systemd:
-        name: docker
-        enabled: yes
-        masked: no
+      shell: "dnf install -y docker-ce"
 
     - name: start Docker
       service:
