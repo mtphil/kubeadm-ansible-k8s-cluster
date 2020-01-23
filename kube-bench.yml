@@ -30,5 +30,12 @@
         dest: ./master_result.txt
         flat: yes
 
-    - name: cleanup
-      shell: rm ~/master_result.txt ~/node_result.txt
+    - name: cleanup pt 1
+      file:
+        path: ~/master_result.txt
+        state: absent
+
+    - name: cleanup pt 2
+      file:
+        path: ~/node_result.txt
+        state: absent
