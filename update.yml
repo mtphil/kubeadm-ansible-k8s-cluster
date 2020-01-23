@@ -1,5 +1,0 @@
-- hosts: all
-  become: yes
-  tasks:
-    - name: update the cluster
-      shell: apt-get -y update ; apt-get -y upgrade
