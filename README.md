@@ -1,5 +1,9 @@
 # kubeadm-ansible-k8s-cluster
 
+Requires `ansible` installed on the local machine.
+
+Includes an ansible playbook which runs [kubebench](https://github.com/aquasecurity/kube-bench) and saves the output to `master_result.txt` and `node_result.txt` files on the local machine.
+
 A `hosts` file must be added in the main directory in the following form: 
 
 ```
