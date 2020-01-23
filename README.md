@@ -1,6 +1,6 @@
 # kubeadm-ansible-k8s-cluster
 
-in order to function, a 'hosts' file must be added in the main directory in the following form: 
+A `hosts` file must be added in the main directory in the following form: 
 
 ```
 [masters]
