@@ -14,8 +14,10 @@ worker2 ansible_host=<worker2_ip> ansible_user=root ansible_ssh_private_key_file
 ansible_python_interpreter=/usr/bin/python3
 ```
 
-When using `centos`, the last line of the `hosts` file should be set to `ansible_python_interpreter=/usr/libexec/platform-python`.
+NOTE: When using `centos`, the last line of the `hosts` file should be set to `ansible_python_interpreter=/usr/libexec/platform-python`.
 
-Afterwards `run.sh` can be used with the `TARGET_OS` variable (choices include `ubuntu`, `debian` and `centos`) set, like so:
+Also, the `with_file` field in `initial.yml` should be set to a `.pub` file on the ansible host.
+
+`run.sh` can be used with the `TARGET_OS` variable (choices include `ubuntu`, `debian` and `centos`) set, like so:
 
 ```TARGET_OS=centos ./run.sh```
