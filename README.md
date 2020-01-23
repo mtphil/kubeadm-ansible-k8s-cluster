@@ -1,8 +1,12 @@
 # kubeadm-ansible-k8s-cluster
 
+## General Info
+
 Requires `ansible` installed on the local machine.
 
 Includes an ansible playbook which runs [kubebench](https://github.com/aquasecurity/kube-bench) and saves the output to `master_result.txt` and `node_result.txt` files on the local machine.
+
+## Setup
 
 A `hosts` file must be added in the main directory in the following form: 
 
@@ -21,6 +25,8 @@ ansible_python_interpreter=/usr/bin/python3
 NOTE: When using `centos`, the last line of the `hosts` file should be set to `ansible_python_interpreter=/usr/libexec/platform-python`.
 
 Also, the `with_file` field in `initial.yml` should be set to an authorized key file on the ansible host.
+
+## Use
 
 `run.sh` can be used with the `TARGET_OS` variable (choices include `ubuntu`, `debian` and `centos`) set, like so:
 
