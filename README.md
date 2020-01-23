@@ -16,7 +16,7 @@ ansible_python_interpreter=/usr/bin/python3
 
 NOTE: When using `centos`, the last line of the `hosts` file should be set to `ansible_python_interpreter=/usr/libexec/platform-python`.
 
-Also, the `with_file` field in `initial.yml` should be set to a `.pub` file on the ansible host.
+Also, the `with_file` field in `initial.yml` should be set to an authorized key file on the ansible host.
 
 `run.sh` can be used with the `TARGET_OS` variable (choices include `ubuntu`, `debian` and `centos`) set, like so:
 
