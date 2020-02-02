@@ -1,5 +1,10 @@
 # kubeadm-ansible-k8s-cluster
 
+## WARNING
+This setup is intentionally barebones and INSECURE (as a hardening exercise / pentest target).
+
+NOT TO BE USED EXCEPT IN HIGHLY CONTROLLED ENVIRONMENTS AND DEFINITELY NOT ANYWHERE NEAR PRODUCTION.
+
 ## General Info
 
 Requires `ansible` installed on the local machine.
